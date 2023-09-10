@@ -1,9 +1,9 @@
 import os
 from sklearn.model_selection import train_test_split
 
-data_path = 'D:/My Documents/GIT Projects/IEEE-Hack-the-meta/ASL_F/asl_alphabet'
-train_path = 'D:/My Documents/GIT Projects/IEEE-Hack-the-meta/ASL_F/asl_alphabet_train'
-test_path = 'D:/My Documents/GIT Projects/IEEE-Hack-the-meta/ASL_F/asl_alphabet_test'
+data_path = 'D:/My Documents/GIT Projects/IEEE-Hack-the-meta/ASL/asl_alphabet'
+train_path = 'D:/My Documents/GIT Projects/IEEE-Hack-the-meta/ASL/asl_alphabet_train'
+test_path = 'D:/My Documents/GIT Projects/IEEE-Hack-the-meta/ASL/asl_alphabet_test'
 
 data_dict = {}
 
@@ -14,7 +14,7 @@ for class_dir in os.listdir(data_path):
         data_dict[class_dir] = files
 
 for class_name, files in data_dict.items():
-    train_files, test_files = train_test_split(files, test_size=0.15)
+    train_files, test_files = train_test_split(files, test_size=0.5)
     
     os.makedirs(os.path.join(train_path, class_name), exist_ok=True)
     os.makedirs(os.path.join(test_path, class_name), exist_ok=True)
